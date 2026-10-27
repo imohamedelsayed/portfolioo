@@ -1,38 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { technologiesData } from '../config/site';
 import { TechIcon } from './TechIcons';
+import { useScrollReplay } from '../hooks/useScrollReplay';
 
 export const Skills: React.FC = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { ref: sectionRef, isVisible } = useScrollReplay<HTMLElement>({
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
   return (
     <section 
       id="skills" 
       ref={sectionRef} 
-      className={`section skills-section ${isVisible ? 'is-revealed' : ''}`} 
+      className={`section skills-section ${isVisible ? 'is-visible' : ''}`} 
       aria-labelledby="skills-heading"
     >
       <div className="container">
-        <div className="section-header text-center">
+        <div className="section-header text-center skills-header">
           <h2 id="skills-heading" className="section-title">
             Skills &amp; Technology Stack
           </h2>

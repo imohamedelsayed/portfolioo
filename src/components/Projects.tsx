@@ -3,12 +3,22 @@ import { ArrowUpRight, Play, Info } from 'lucide-react';
 import { projectsData, ProjectConcept } from '../config/site';
 import { ProjectVisual } from './ProjectVisuals';
 import { ProjectModal } from './ProjectModal';
+import { useScrollReplay } from '../hooks/useScrollReplay';
 
 export const Projects: React.FC = () => {
   const [activeModalProject, setActiveModalProject] = useState<ProjectConcept | null>(null);
+  const { ref: sectionRef, isVisible } = useScrollReplay<HTMLElement>({
+    threshold: 0.05,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
   return (
-    <section id="projects" className="section projects-section" aria-labelledby="projects-heading">
+    <section 
+      id="projects" 
+      ref={sectionRef} 
+      className={`section projects-section ${isVisible ? 'is-visible' : ''}`} 
+      aria-labelledby="projects-heading"
+    >
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Github, Linkedin, Copy, Check, Send, AlertCircle, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../config/site';
+import { useScrollReplay } from '../hooks/useScrollReplay';
 
 export const Contact: React.FC = () => {
+  const { ref: sectionRef, isVisible } = useScrollReplay<HTMLElement>({
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -56,7 +61,12 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section contact-section" aria-labelledby="contact-heading">
+    <section 
+      id="contact" 
+      ref={sectionRef} 
+      className={`section contact-section ${isVisible ? 'is-visible' : ''}`} 
+      aria-labelledby="contact-heading"
+    >
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

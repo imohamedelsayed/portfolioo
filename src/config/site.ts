@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   whatsappNumber: "",
   whatsappPrefillText: "Hello Mohamed, I came across your portfolio and would like to discuss a web project.",
   linkedinUrl: "",
-  githubUrl: "",
+  githubUrl: "https://github.com/imohamedelsayed",
   additionalProfileUrl: "",
   location: "Available Worldwide (Remote)",
   availability: "Available for freelance projects"
@@ -107,18 +107,11 @@ export interface TechnologyItem {
 
 export const technologiesData: TechnologyItem[] = [
   { name: "TypeScript", iconId: "typescript" },
-  { name: "JavaScript", iconId: "javascript" },
-  { name: "React", iconId: "react" },
+  { name: "GitHub", iconId: "github" },
   { name: "Node.js", iconId: "nodejs" },
   { name: "Express", iconId: "express" },
-  { name: "HTML5", iconId: "html5" },
-  { name: "CSS3", iconId: "css3" },
-  { name: "Django", iconId: "django" },
-  { name: "Flask", iconId: "flask" },
   { name: "PostgreSQL", iconId: "postgresql" },
-  { name: "MySQL", iconId: "mysql" },
-  { name: "Git", iconId: "git" },
-  { name: "GitHub", iconId: "github" }
+  { name: "MySQL", iconId: "mysql" }
 ];
 
 export interface ProjectConcept {

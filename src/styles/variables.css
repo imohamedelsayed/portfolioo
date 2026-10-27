@@ -20,11 +20,20 @@
   --border-strong: rgba(38, 55, 70, 0.18);
   --focus-ring: #8FC5F0;
 
+  /* Deep navy footer tokens derived from --text-dark (#263746) */
+  --footer-bg-deep: #070F1A;
+  --footer-bg-surface: #091424;
+  --footer-glow: rgba(45, 110, 185, 0.22);
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-text-muted: rgba(255, 255, 255, 0.68);
+  --footer-text-subtle: rgba(255, 255, 255, 0.44);
+
   /* ==========================================================================
      Typography System
      ========================================================================== */
   --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', 'Brush Script MT', cursive;
 
   /* Fluid typography clamp scale */
   --text-display: clamp(2.4rem, 4.5vw + 1rem, 3.85rem);

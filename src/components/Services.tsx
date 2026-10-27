@@ -1,14 +1,25 @@
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { servicesData } from '../config/site';
+import { useScrollReplay } from '../hooks/useScrollReplay';
 
 interface ServicesProps {
   onNavigate: (sectionId: string) => void;
 }
 
 export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
+  const { ref: sectionRef, isVisible } = useScrollReplay<HTMLElement>({
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
   return (
-    <section id="services" className="section services-section" aria-labelledby="services-heading">
+    <section 
+      id="services" 
+      ref={sectionRef} 
+      className={`section services-section ${isVisible ? 'is-visible' : ''}`} 
+      aria-labelledby="services-heading"
+    >
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
