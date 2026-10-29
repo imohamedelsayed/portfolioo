@@ -36,9 +36,38 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       className={`hero-section ${isVisible ? 'is-visible' : ''}`}
       aria-label="Introduction"
     >
+      {/* Subtle technical grid texture */}
+      <div className="hero-grid-pattern" aria-hidden="true" />
+
       {/* Subtle ambient backdrop shapes */}
       <div className="hero-ambient-shape shape-1" aria-hidden="true" />
       <div className="hero-ambient-shape shape-2" aria-hidden="true" />
+
+      {/* Subtle animated flowing background lines */}
+      <div className="hero-flowing-lines" aria-hidden="true">
+        <svg className="flowing-line-svg" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
+          <path
+            className="flowing-line-path path-1"
+            d="M -100 280 C 300 120, 600 420, 1050 220 C 1250 140, 1400 290, 1600 240"
+            stroke="rgba(74, 147, 216, 0.2)"
+            strokeWidth="1.5"
+            strokeDasharray="6 8"
+          />
+          <path
+            className="flowing-line-path path-2"
+            d="M -50 420 C 350 260, 750 520, 1150 340 C 1350 260, 1480 380, 1600 350"
+            stroke="rgba(143, 197, 240, 0.25)"
+            strokeWidth="1.2"
+          />
+        </svg>
+      </div>
+
+      {/* Hero edge floating geometric accents */}
+      <div className="hero-edge-decorations" aria-hidden="true">
+        <div className="hero-edge-diamond" />
+        <div className="hero-edge-dot dot-1" />
+        <div className="hero-edge-dot dot-2" />
+      </div>
 
       <div className="container hero-container">
         <div className="hero-grid">
@@ -100,6 +129,24 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <div className="portrait-wrapper">
               {/* Subtle ambient lighting behind portrait */}
               <div className="portrait-backdrop-glow" aria-hidden="true" />
+
+              {/* Floating Geometric Decorations (Coordinated, non-intrusive) */}
+              <div className="hero-floating-decorations" aria-hidden="true">
+                <div className="hero-decor-orb" />
+                <div className="hero-decor-diamond" />
+                <div className="hero-decor-ring" />
+                <div className="hero-decor-constellation">
+                  <svg width="120" height="90" viewBox="0 0 120 90" fill="none">
+                    <line x1="20" y1="20" x2="65" y2="45" stroke="#8FC5F0" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+                    <line x1="65" y1="45" x2="105" y2="25" stroke="#8FC5F0" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+                    <line x1="65" y1="45" x2="75" y2="80" stroke="#8FC5F0" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+                    <circle cx="20" cy="20" r="3" fill="#8FC5F0" opacity="0.8" />
+                    <circle cx="65" cy="45" r="3.5" fill="#2878CC" opacity="0.75" />
+                    <circle cx="105" cy="25" r="2.5" fill="#8FC5F0" opacity="0.65" />
+                    <circle cx="75" cy="80" r="2" fill="#D8EAF9" opacity="0.9" />
+                  </svg>
+                </div>
+              </div>
 
               {/* Living Geometry: Architectural SVG Accents drawing dynamically */}
               <div className="hero-living-geometry" aria-hidden="true">

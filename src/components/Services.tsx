@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import { servicesData } from '../config/site';
 import { useScrollReplay } from '../hooks/useScrollReplay';
+import { SectionDecor } from './SectionDecor';
 
 interface ServicesProps {
   onNavigate: (sectionId: string) => void;
@@ -20,6 +21,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
       className={`section services-section ${isVisible ? 'is-visible' : ''}`} 
       aria-labelledby="services-heading"
     >
+      {/* Decorative boundary accents */}
+      <SectionDecor variant="services" />
+
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

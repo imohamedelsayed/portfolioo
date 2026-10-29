@@ -4,6 +4,7 @@ import { projectsData, ProjectConcept } from '../config/site';
 import { ProjectVisual } from './ProjectVisuals';
 import { ProjectModal } from './ProjectModal';
 import { useScrollReplay } from '../hooks/useScrollReplay';
+import { SectionDecor } from './SectionDecor';
 
 export const Projects: React.FC = () => {
   const [activeModalProject, setActiveModalProject] = useState<ProjectConcept | null>(null);
@@ -19,6 +20,9 @@ export const Projects: React.FC = () => {
       className={`section projects-section ${isVisible ? 'is-visible' : ''}`} 
       aria-labelledby="projects-heading"
     >
+      {/* Decorative boundary accents & subtle grid */}
+      <SectionDecor variant="projects" />
+
       <div className="container">
         {/* Section Header */}
         <div className="section-header">

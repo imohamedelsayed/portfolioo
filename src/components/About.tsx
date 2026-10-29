@@ -1,5 +1,6 @@
 import React from 'react';
 import { useScrollReplay } from '../hooks/useScrollReplay';
+import { SectionDecor } from './SectionDecor';
 
 const aboutParagraphs = [
   "I build complete websites from the ground up, handling both visual direction and frontend implementation. Rather than treating design and development as disconnected phases, I focus on how layout, typography, interaction, and code structure inform one another to create cohesive digital products.",
@@ -20,6 +21,9 @@ export const About: React.FC = () => {
       className={`section about-section ${isVisible ? 'is-visible' : ''}`} 
       aria-labelledby="about-heading"
     >
+      {/* Decorative boundary accents & subtle grid */}
+      <SectionDecor variant="about" />
+
       <div className="container about-container">
         <div className="about-unified-content">
           <div className="about-heading-mask">

@@ -109,6 +109,8 @@ export const technologiesData: TechnologyItem[] = [
   { name: "TypeScript", iconId: "typescript" },
   { name: "GitHub", iconId: "github" },
   { name: "Node.js", iconId: "nodejs" },
+  { name: "Git", iconId: "git" },
+  { name: "Django", iconId: "django" },
   { name: "Express", iconId: "express" },
   { name: "PostgreSQL", iconId: "postgresql" },
   { name: "MySQL", iconId: "mysql" }

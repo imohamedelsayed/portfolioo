@@ -11,6 +11,7 @@ import { Services } from './components/Services';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { CursorTrail } from './components/CursorTrail';
 
 export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -56,6 +57,9 @@ export const App: React.FC = () => {
 
   return (
     <div className="site-wrapper">
+      {/* Desktop pointer custom signature trail */}
+      <CursorTrail />
+
       {/* Accessible skip link for keyboard & screen reader users */}
       <a href="#main-content" className="skip-to-content">
         Skip to main content
